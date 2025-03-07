@@ -3,73 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exploding Kittens Rules</title>
+    <title>Board Game Rules</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header id="top">
-        <h1>Exploding Kittens Rules</h1>
+    <header>
+        <h1>Board Game Rules</h1>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#goal">The Goal</a></li>
-            <li><a href="#setup">Setup</a></li>
-            <li><a href="#gameplay">How to Play</a></li>
-            <li><a href="#fun-cards">Fun Cards</a></li>
-        </ul>
-    </nav>
-
     <main>
-        <section id="goal">
-            <h2>The Goal</h2>
-            <p>We’re playing a game where you **don’t** want to find a BOOM! (an Exploding Kitten). If you explode, you’re **out!**</p>
-            <p>Be the last player standing to **win** the game!</p>
-        </section>
-
-        <section id="setup">
-            <h2>Setup (Quick & Easy!)</h2>
-            <ul>
-                <li>Each player starts with **7 random cards** + **1 Save Me (Defuse) card.**</li>
-                <li>Shuffle **BOOM! (Exploding Kitten)** cards into the deck (not too many!).</li>
-                <li>Place the deck in the center—**ready to play!**</li>
-            </ul>
-        </section>
-
-        <section id="gameplay">
-            <h2>How to Play (Step by Step)</h2>
-            <h3>1. On your turn:</h3>
-            <ul>
-                <li>Play a card (if you want)—or just skip this step.</li>
-                <li>Draw a card from the deck. (**Hope it’s not a BOOM!**)</li>
-            </ul>
-
-            <h3>2. If you get a BOOM! (Exploding Kitten):</h3>
-            <ul>
-                <li>Use a **Save Me (Defuse) card** to stay in the game!</li>
-                <li>No Save Me card? **You’re out!** (But you can still watch and laugh.)</li>
-            </ul>
-
-            <h3>3. Keep playing until only one player remains—they **win!**</h3>
-        </section>
-
-        <section id="fun-cards">
-            <h2>Fun Cards to Watch For</h2>
-            <ul>
-                <li><strong>Skip!</strong> – Avoid drawing a card this turn!</li>
-                <li><strong>See the Future!</strong> – Peek at the next 3 cards in the deck.</li>
-                <li><strong>Shuffle!</strong> – Mix the deck to create chaos!</li>
-                <li><strong>Nope!</strong> – Stop another player from using a card!</li>
-                <li><strong>Attack!</strong> – Make the next player take **two** turns!</li>
-            </ul>
-        </section>
+        <h2>Choose a Game</h2>
+        <ul id="game-list"></ul>
     </main>
 
     <footer>
-        <p>© 2025 Exploding Kittens Rules</p>
-        <p><a href="#top">Back to Top</a></p>
+        <p>© 2025 Board Game Rules</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // List of games (You can add more games here)
+        const games = [
+            { name: "Exploding Kittens", file: "game.html?game=exploding-kittens" },
+            { name: "Unstable Unicorns", file: "game.html?game=unstable-unicorns" }
+        ];
+
+        // Load games dynamically
+        const gameList = document.getElementById("game-list");
+        games.forEach(game => {
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `<a href="${game.file}">${game.name}</a>`;
+            gameList.appendChild(listItem);
+        });
+    </script>
 </body>
 </html>
